@@ -5,18 +5,18 @@
  * For full license information, please view the LICENSE file that was distributed with this source code.
  */
 
-namespace Spryker\Zed\ClickAndCollectExample\Business\QuoteItemReplacer;
+namespace Spryker\Zed\ClickAndCollectExample\Business\Replacer;
 
 use Generated\Shared\Transfer\ItemTransfer;
 use Generated\Shared\Transfer\ProductOfferServicePointCriteriaTransfer;
-use Generated\Shared\Transfer\QuoteResponseTransfer;
+use Generated\Shared\Transfer\QuoteReplacementResponseTransfer;
 use Generated\Shared\Transfer\QuoteTransfer;
-use Spryker\Zed\ClickAndCollectExample\Business\ErrorAdder\QuoteResponseErrorAdderInterface;
+use Spryker\Zed\ClickAndCollectExample\Business\ErrorAdder\QuoteReplacementResponseErrorAdderInterface;
 use Spryker\Zed\ClickAndCollectExample\Business\ProductOfferReplacementFinder\ProductOfferReplacementFinderInterface;
 use Spryker\Zed\ClickAndCollectExample\Business\Reader\ProductOfferServicePointReaderInterface;
 use Spryker\Zed\ClickAndCollectExample\ClickAndCollectExampleConfig;
 
-class DeliveryQuoteItemReplacer implements QuoteItemReplacerInterface
+class DeliveryItemProductOfferReplacer implements ItemProductOfferReplacerInterface
 {
     /**
      * @var \Spryker\Zed\ClickAndCollectExample\Business\Reader\ProductOfferServicePointReaderInterface
@@ -29,9 +29,9 @@ class DeliveryQuoteItemReplacer implements QuoteItemReplacerInterface
     protected ProductOfferReplacementFinderInterface $clickAndCollectExampleProductOfferReplacementFinder;
 
     /**
-     * @var \Spryker\Zed\ClickAndCollectExample\Business\ErrorAdder\QuoteResponseErrorAdderInterface
+     * @var \Spryker\Zed\ClickAndCollectExample\Business\ErrorAdder\QuoteReplacementResponseErrorAdderInterface
      */
-    protected QuoteResponseErrorAdderInterface $clickAndCollectExampleQuoteResponseErrorAdder;
+    protected QuoteReplacementResponseErrorAdderInterface $quoteReplacementResponseErrorAdder;
 
     /**
      * @var \Spryker\Zed\ClickAndCollectExample\ClickAndCollectExampleConfig
@@ -41,32 +41,32 @@ class DeliveryQuoteItemReplacer implements QuoteItemReplacerInterface
     /**
      * @param \Spryker\Zed\ClickAndCollectExample\Business\Reader\ProductOfferServicePointReaderInterface $clickAndCollectExampleProductOfferServicePointReader
      * @param \Spryker\Zed\ClickAndCollectExample\Business\ProductOfferReplacementFinder\ProductOfferReplacementFinderInterface $clickAndCollectExampleProductOfferReplacementFinder
-     * @param \Spryker\Zed\ClickAndCollectExample\Business\ErrorAdder\QuoteResponseErrorAdderInterface $clickAndCollectExampleQuoteResponseErrorAdder
+     * @param \Spryker\Zed\ClickAndCollectExample\Business\ErrorAdder\QuoteReplacementResponseErrorAdderInterface $quoteReplacementResponseErrorAdder
      * @param \Spryker\Zed\ClickAndCollectExample\ClickAndCollectExampleConfig $clickAndCollectExampleConfig
      */
     public function __construct(
         ProductOfferServicePointReaderInterface $clickAndCollectExampleProductOfferServicePointReader,
         ProductOfferReplacementFinderInterface $clickAndCollectExampleProductOfferReplacementFinder,
-        QuoteResponseErrorAdderInterface $clickAndCollectExampleQuoteResponseErrorAdder,
+        QuoteReplacementResponseErrorAdderInterface $quoteReplacementResponseErrorAdder,
         ClickAndCollectExampleConfig $clickAndCollectExampleConfig
     ) {
         $this->clickAndCollectExampleProductOfferServicePointReader = $clickAndCollectExampleProductOfferServicePointReader;
         $this->clickAndCollectExampleProductOfferReplacementFinder = $clickAndCollectExampleProductOfferReplacementFinder;
-        $this->clickAndCollectExampleQuoteResponseErrorAdder = $clickAndCollectExampleQuoteResponseErrorAdder;
+        $this->quoteReplacementResponseErrorAdder = $quoteReplacementResponseErrorAdder;
         $this->clickAndCollectExampleConfig = $clickAndCollectExampleConfig;
     }
 
     /**
      * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
      *
-     * @return \Generated\Shared\Transfer\QuoteResponseTransfer
+     * @return \Generated\Shared\Transfer\QuoteReplacementResponseTransfer
      */
-    public function replaceQuoteItemProductOffers(QuoteTransfer $quoteTransfer): QuoteResponseTransfer
+    public function replaceQuoteItemProductOffers(QuoteTransfer $quoteTransfer): QuoteReplacementResponseTransfer
     {
-        $quoteResponseTransfer = (new QuoteResponseTransfer())->setQuoteTransfer($quoteTransfer)->setIsSuccessful(true);
-        $itemTransfersForReplacement = $this->getQuoteItemsAvailableForReplacement($quoteResponseTransfer);
+        $quoteReplacementResponseTransfer = (new QuoteReplacementResponseTransfer())->setQuote($quoteTransfer);
+        $itemTransfersForReplacement = $this->getQuoteItemsAvailableForReplacement($quoteReplacementResponseTransfer);
         if (count($itemTransfersForReplacement) === 0) {
-            return $quoteResponseTransfer;
+            return $quoteReplacementResponseTransfer;
         }
         $productOfferServicePointCriteriaTransfer = $this
             ->createProductOfferServicePointCriteriaTransfer($quoteTransfer, $itemTransfersForReplacement);
@@ -77,8 +77,8 @@ class DeliveryQuoteItemReplacer implements QuoteItemReplacerInterface
         foreach ($itemTransfersForReplacement as $itemTransfer) {
             $replacementProductOfferTransfer = $this->clickAndCollectExampleProductOfferReplacementFinder->findSuitableProductOffer($itemTransfer, $productOfferServicePointTransfers);
             if (!$replacementProductOfferTransfer) {
-                $itemTransfer->setShipmentType(null)->setShipment(null);
-                $this->clickAndCollectExampleQuoteResponseErrorAdder->addError($quoteResponseTransfer, $itemTransfer);
+                $quoteReplacementResponseTransfer->addFailedReplacementItem($itemTransfer);
+                $this->quoteReplacementResponseErrorAdder->addError($quoteReplacementResponseTransfer, $itemTransfer);
 
                 continue;
             }
@@ -87,18 +87,18 @@ class DeliveryQuoteItemReplacer implements QuoteItemReplacerInterface
             $itemTransfer->setGroupKey(null);
         }
 
-        return $quoteResponseTransfer;
+        return $quoteReplacementResponseTransfer;
     }
 
     /**
-     * @param \Generated\Shared\Transfer\QuoteResponseTransfer $quoteResponseTransfer
+     * @param \Generated\Shared\Transfer\QuoteReplacementResponseTransfer $quoteReplacementResponseTransfer
      *
      * @return list<\Generated\Shared\Transfer\ItemTransfer>
      */
-    protected function getQuoteItemsAvailableForReplacement(QuoteResponseTransfer $quoteResponseTransfer): array
+    protected function getQuoteItemsAvailableForReplacement(QuoteReplacementResponseTransfer $quoteReplacementResponseTransfer): array
     {
         $quoteItemTransfersForReplacement = [];
-        foreach ($quoteResponseTransfer->getQuoteTransferOrFail()->getItems() as $itemTransfer) {
+        foreach ($quoteReplacementResponseTransfer->getQuoteOrFail()->getItems() as $itemTransfer) {
             if (!$this->isQuoteItemApplicable($itemTransfer)) {
                 continue;
             }
@@ -116,9 +116,10 @@ class DeliveryQuoteItemReplacer implements QuoteItemReplacerInterface
      */
     protected function isQuoteItemApplicable(ItemTransfer $itemTransfer): bool
     {
-        return !$this->isItemProductBundle($itemTransfer)
-            && $itemTransfer->getShipmentTypeOrFail()->getKey() === $this->clickAndCollectExampleConfig->getDeliveryShipmentTypeKey()
-            && $itemTransfer->getProductOfferReference();
+        return $itemTransfer->getShipmentType()
+            && !$this->isItemProductBundle($itemTransfer)
+            && $itemTransfer->getProductOfferReference()
+            && $itemTransfer->getShipmentTypeOrFail()->getKey() === $this->clickAndCollectExampleConfig->getDeliveryShipmentTypeKey();
     }
 
     /**
