@@ -5,7 +5,7 @@
  * For full license information, please view the LICENSE file that was distributed with this source code.
  */
 
-namespace SprykerTest\Client\fi\Plugin\ExampleClickAndCollectProductOfferServicePointAvailabilityCalculatorStrategyPlugin;
+namespace SprykerTest\Client\ClickAndCollectExample\Plugin\ExampleClickAndCollectProductOfferServicePointAvailabilityCalculatorStrategyPlugin;
 
 use Codeception\Test\Unit;
 use Generated\Shared\Transfer\ProductOfferServicePointAvailabilityCollectionTransfer;
@@ -20,7 +20,7 @@ use SprykerTest\Client\ClickAndCollectExample\ClickAndCollectExampleClientTester
  *
  * @group SprykerTest
  * @group Client
- * @group fi
+ * @group ClickAndCollectExample
  * @group Plugin
  * @group ExampleClickAndCollectProductOfferServicePointAvailabilityCalculatorStrategyPlugin
  * @group CalculateProductOfferServicePointAvailabilitiesTest
