@@ -16,7 +16,7 @@ interface ProductOfferReplacementFinderInterface
     /**
      * @param \Generated\Shared\Transfer\ItemTransfer $itemTransfer
      * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     * @param list<\Generated\Shared\Transfer\ProductOfferServicePointTransfer> $productOfferServicePointTransfers
+     * @param array<\Generated\Shared\Transfer\ProductOfferServicePointTransfer> $productOfferServicePointTransfers
      *
      * @return \Generated\Shared\Transfer\ProductOfferTransfer|null
      */

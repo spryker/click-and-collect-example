@@ -57,7 +57,7 @@ class QuoteProductOfferReplacer implements QuoteProductOfferReplacerInterface
     }
 
     /**
-     * @param list<list<\Generated\Shared\Transfer\QuoteErrorTransfer>> $combinedQuoteErrorTransfers
+     * @param array<array<\Generated\Shared\Transfer\QuoteErrorTransfer>> $combinedQuoteErrorTransfers
      *
      * @return \ArrayObject<int, \Generated\Shared\Transfer\QuoteErrorTransfer>
      */
@@ -70,7 +70,7 @@ class QuoteProductOfferReplacer implements QuoteProductOfferReplacerInterface
     }
 
     /**
-     * @param list<list<\Generated\Shared\Transfer\ItemTransfer>> $combinedFailedReplacementItems
+     * @param array<array<\Generated\Shared\Transfer\ItemTransfer>> $combinedFailedReplacementItems
      *
      * @return \ArrayObject<int, \Generated\Shared\Transfer\ItemTransfer>
      */

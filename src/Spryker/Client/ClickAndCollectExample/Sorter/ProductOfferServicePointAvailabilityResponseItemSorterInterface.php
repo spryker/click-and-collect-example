@@ -10,10 +10,10 @@ namespace Spryker\Client\ClickAndCollectExample\Sorter;
 interface ProductOfferServicePointAvailabilityResponseItemSorterInterface
 {
     /**
-     * @param list<\Generated\Shared\Transfer\ProductOfferServicePointAvailabilityResponseItemTransfer> $productOfferServicePointAvailabilityResponseItemTransfers
-     * @param list<string> $requestedProductOfferReferences
+     * @param array<\Generated\Shared\Transfer\ProductOfferServicePointAvailabilityResponseItemTransfer> $productOfferServicePointAvailabilityResponseItemTransfers
+     * @param array<string> $requestedProductOfferReferences
      *
-     * @return list<\Generated\Shared\Transfer\ProductOfferServicePointAvailabilityResponseItemTransfer>
+     * @return array<\Generated\Shared\Transfer\ProductOfferServicePointAvailabilityResponseItemTransfer>
      */
     public function sortProductOfferServicePointAvailabilityResponseItemTransfersByRequestedProductOffers(
         array $productOfferServicePointAvailabilityResponseItemTransfers,

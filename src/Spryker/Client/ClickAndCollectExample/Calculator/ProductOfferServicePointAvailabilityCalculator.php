@@ -32,7 +32,7 @@ class ProductOfferServicePointAvailabilityCalculator implements ProductOfferServ
      * @param \Generated\Shared\Transfer\ProductOfferServicePointAvailabilityCollectionTransfer $productOfferServicePointAvailabilityCollectionTransfer
      * @param \Generated\Shared\Transfer\ProductOfferServicePointAvailabilityConditionsTransfer $productOfferServicePointAvailabilityConditionsTransfer
      *
-     * @return array<string, list<\Generated\Shared\Transfer\ProductOfferServicePointAvailabilityResponseItemTransfer>>
+     * @return array<string, array<\Generated\Shared\Transfer\ProductOfferServicePointAvailabilityResponseItemTransfer>>
      */
     public function calculateProductOfferServicePointAvailabilities(
         ProductOfferServicePointAvailabilityCollectionTransfer $productOfferServicePointAvailabilityCollectionTransfer,
@@ -57,7 +57,7 @@ class ProductOfferServicePointAvailabilityCalculator implements ProductOfferServ
      * @param \Generated\Shared\Transfer\ProductOfferServicePointAvailabilityCollectionTransfer $productOfferServicePointAvailabilityCollectionTransfer
      * @param \Generated\Shared\Transfer\ProductOfferServicePointAvailabilityConditionsTransfer $productOfferServicePointAvailabilityConditionsTransfer
      *
-     * @return array<string, list<\Generated\Shared\Transfer\ProductOfferServicePointAvailabilityResponseItemTransfer>>
+     * @return array<string, array<\Generated\Shared\Transfer\ProductOfferServicePointAvailabilityResponseItemTransfer>>
      */
     public function calculateProductOfferServicePointAvailabilitiesByExampleStrategy(
         ProductOfferServicePointAvailabilityCollectionTransfer $productOfferServicePointAvailabilityCollectionTransfer,
@@ -97,11 +97,11 @@ class ProductOfferServicePointAvailabilityCalculator implements ProductOfferServ
 
     /**
      * @param \Generated\Shared\Transfer\ProductOfferServicePointAvailabilityRequestItemTransfer $productOfferServicePointAvailabilityRequestItemTransfer
-     * @param list<string> $servicePointUuids
-     * @param array<string, array<string, list<\Generated\Shared\Transfer\ProductOfferServicePointAvailabilityResponseItemTransfer>>> $productOfferServicePointAvailabilityResponseItemTransfersMap
-     * @param array<string, list<\Generated\Shared\Transfer\ProductOfferServicePointAvailabilityResponseItemTransfer>> $productOfferServicePointAvailabilityResponseItemTransfersGroupedByServicePointUuid
+     * @param array<string> $servicePointUuids
+     * @param array<string, array<string, array<\Generated\Shared\Transfer\ProductOfferServicePointAvailabilityResponseItemTransfer>>> $productOfferServicePointAvailabilityResponseItemTransfersMap
+     * @param array<string, array<\Generated\Shared\Transfer\ProductOfferServicePointAvailabilityResponseItemTransfer>> $productOfferServicePointAvailabilityResponseItemTransfersGroupedByServicePointUuid
      *
-     * @return array<string, list<\Generated\Shared\Transfer\ProductOfferServicePointAvailabilityResponseItemTransfer>>
+     * @return array<string, array<\Generated\Shared\Transfer\ProductOfferServicePointAvailabilityResponseItemTransfer>>
      */
     protected function calculateProductAvailabilityAtServicePoints(
         ProductOfferServicePointAvailabilityRequestItemTransfer $productOfferServicePointAvailabilityRequestItemTransfer,
@@ -138,10 +138,10 @@ class ProductOfferServicePointAvailabilityCalculator implements ProductOfferServ
 
     /**
      * @param \Generated\Shared\Transfer\ProductOfferServicePointAvailabilityRequestItemTransfer $productOfferServicePointAvailabilityRequestItemTransfer
-     * @param list<\Generated\Shared\Transfer\ProductOfferServicePointAvailabilityResponseItemTransfer> $productOfferServicePointAvailabilityResponseItemTransfers
+     * @param array<\Generated\Shared\Transfer\ProductOfferServicePointAvailabilityResponseItemTransfer> $productOfferServicePointAvailabilityResponseItemTransfers
      * @param string $servicePointUuid
      *
-     * @return list<\Generated\Shared\Transfer\ProductOfferServicePointAvailabilityResponseItemTransfer>
+     * @return array<\Generated\Shared\Transfer\ProductOfferServicePointAvailabilityResponseItemTransfer>
      */
     protected function resolveApplicableProductOfferServicePointAvailabilityResponseItemTransfers(
         ProductOfferServicePointAvailabilityRequestItemTransfer $productOfferServicePointAvailabilityRequestItemTransfer,
@@ -205,9 +205,9 @@ class ProductOfferServicePointAvailabilityCalculator implements ProductOfferServ
     }
 
     /**
-     * @param list<\Generated\Shared\Transfer\ProductOfferServicePointAvailabilityResponseItemTransfer> $productOfferServicePointAvailabilityResponseItemTransfers
+     * @param array<\Generated\Shared\Transfer\ProductOfferServicePointAvailabilityResponseItemTransfer> $productOfferServicePointAvailabilityResponseItemTransfers
      *
-     * @return array<string, array<string, list<\Generated\Shared\Transfer\ProductOfferServicePointAvailabilityResponseItemTransfer>>>
+     * @return array<string, array<string, array<\Generated\Shared\Transfer\ProductOfferServicePointAvailabilityResponseItemTransfer>>>
      */
     protected function getProductOfferServicePointAvailabilityResponseItemTransfersMap(
         array $productOfferServicePointAvailabilityResponseItemTransfers
@@ -225,9 +225,9 @@ class ProductOfferServicePointAvailabilityCalculator implements ProductOfferServ
     }
 
     /**
-     * @param list<\Generated\Shared\Transfer\ProductOfferServicePointAvailabilityRequestItemTransfer> $productOfferServicePointAvailabilityRequestItemTransfers
+     * @param array<\Generated\Shared\Transfer\ProductOfferServicePointAvailabilityRequestItemTransfer> $productOfferServicePointAvailabilityRequestItemTransfers
      *
-     * @return list<string>
+     * @return array<string>
      */
     protected function extractProductOfferReferencesFromProductOfferServicePointAvailabilityRequestItemTransfers(
         array $productOfferServicePointAvailabilityRequestItemTransfers
@@ -246,10 +246,10 @@ class ProductOfferServicePointAvailabilityCalculator implements ProductOfferServ
     }
 
     /**
-     * @param array<string, list<\Generated\Shared\Transfer\ProductOfferServicePointAvailabilityResponseItemTransfer>> $productOfferServicePointAvailabilityResponseItemTransfersGroupedByServicePointUuid
-     * @param list<string> $servicePointUuids
+     * @param array<string, array<\Generated\Shared\Transfer\ProductOfferServicePointAvailabilityResponseItemTransfer>> $productOfferServicePointAvailabilityResponseItemTransfersGroupedByServicePointUuid
+     * @param array<string> $servicePointUuids
      *
-     * @return array<string, list<\Generated\Shared\Transfer\ProductOfferServicePointAvailabilityResponseItemTransfer>>
+     * @return array<string, array<\Generated\Shared\Transfer\ProductOfferServicePointAvailabilityResponseItemTransfer>>
      */
     protected function addMissingServicePointUuidsToProductOfferServicePointAvailabilities(
         array $productOfferServicePointAvailabilityResponseItemTransfersGroupedByServicePointUuid,

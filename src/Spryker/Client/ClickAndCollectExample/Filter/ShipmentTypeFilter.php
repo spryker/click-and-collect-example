@@ -52,7 +52,7 @@ class ShipmentTypeFilter implements ShipmentTypeFilterInterface
 
     /**
      * @param array<string, \Generated\Shared\Transfer\ShipmentTypeStorageTransfer> $shipmentTypeStorageTransfers
-     * @param array<string, list<\Generated\Shared\Transfer\ProductOfferStorageTransfer>> $productOfferStorageTransfers
+     * @param array<string, array<\Generated\Shared\Transfer\ProductOfferStorageTransfer>> $productOfferStorageTransfers
      *
      * @return array<string, \Generated\Shared\Transfer\ShipmentTypeStorageTransfer>
      */
@@ -96,7 +96,7 @@ class ShipmentTypeFilter implements ShipmentTypeFilterInterface
     /**
      * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
      *
-     * @return array<string, list<\Generated\Shared\Transfer\ProductOfferStorageTransfer>>
+     * @return array<string, array<\Generated\Shared\Transfer\ProductOfferStorageTransfer>>
      */
     protected function getProductOfferStoragesGroupedBySku(QuoteTransfer $quoteTransfer): array
     {
@@ -118,7 +118,7 @@ class ShipmentTypeFilter implements ShipmentTypeFilterInterface
     /**
      * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
      *
-     * @return list<string>
+     * @return array<string>
      */
     protected function extractProductOfferSkusFromQuote(QuoteTransfer $quoteTransfer): array
     {
@@ -133,7 +133,7 @@ class ShipmentTypeFilter implements ShipmentTypeFilterInterface
     }
 
     /**
-     * @param list<\Generated\Shared\Transfer\ProductOfferStorageTransfer> $productOfferStorageTransfers
+     * @param array<\Generated\Shared\Transfer\ProductOfferStorageTransfer> $productOfferStorageTransfers
      * @param array<string, \Generated\Shared\Transfer\ShipmentTypeStorageTransfer> $shipmentTypeStorageTransfers
      * @param array<string, \Generated\Shared\Transfer\ShipmentTypeStorageTransfer> $filteredShipmentTypeStorages
      *

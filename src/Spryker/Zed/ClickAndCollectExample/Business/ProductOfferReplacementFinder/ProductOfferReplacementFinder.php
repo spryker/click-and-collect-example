@@ -180,10 +180,10 @@ class ProductOfferReplacementFinder implements ProductOfferReplacementFinderInte
     }
 
     /**
-     * @param list<\Generated\Shared\Transfer\ProductOfferServicePointTransfer> $productOfferServicePointTransfers
+     * @param array<\Generated\Shared\Transfer\ProductOfferServicePointTransfer> $productOfferServicePointTransfers
      * @param array<string, \Generated\Shared\Transfer\SellableItemResponseTransfer> $sellableItemResponseTransfersIndexedByProductOfferReference
      *
-     * @return list<\Generated\Shared\Transfer\ProductOfferServicePointTransfer>
+     * @return array<\Generated\Shared\Transfer\ProductOfferServicePointTransfer>
      */
     protected function syncProductOfferStockQuantities(
         array $productOfferServicePointTransfers,
