@@ -20,20 +20,11 @@ class ShipmentTypeFilter implements ShipmentTypeFilterInterface
      */
     protected ClickAndCollectExampleToProductOfferStorageClientInterface $productOfferStorageClient;
 
-    /**
-     * @param \Spryker\Client\ClickAndCollectExample\Dependency\Client\ClickAndCollectExampleToProductOfferStorageClientInterface $productOfferStorageClient
-     */
     public function __construct(ClickAndCollectExampleToProductOfferStorageClientInterface $productOfferStorageClient)
     {
         $this->productOfferStorageClient = $productOfferStorageClient;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ShipmentTypeStorageCollectionTransfer $shipmentTypeStorageCollectionTransfer
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShipmentTypeStorageCollectionTransfer
-     */
     public function filterUnavailableProductOfferShipmentTypes(
         ShipmentTypeStorageCollectionTransfer $shipmentTypeStorageCollectionTransfer,
         QuoteTransfer $quoteTransfer

@@ -63,11 +63,6 @@ class ClickAndCollectExampleDependencyProvider extends AbstractBundleDependencyP
      */
     public const FACADE_MERCHANT_USER = 'FACADE_MERCHANT_USER';
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     public function provideBusinessLayerDependencies(Container $container): Container
     {
         $container = parent::provideBusinessLayerDependencies($container);
@@ -81,11 +76,6 @@ class ClickAndCollectExampleDependencyProvider extends AbstractBundleDependencyP
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     public function providePersistenceLayerDependencies(Container $container): Container
     {
         $container = parent::providePersistenceLayerDependencies($container);
@@ -97,11 +87,6 @@ class ClickAndCollectExampleDependencyProvider extends AbstractBundleDependencyP
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addProductOfferQuery(Container $container): Container
     {
         $container->set(static::PROPEL_QUERY_PRODUCT_OFFER, $container->factory(function () {
@@ -111,11 +96,6 @@ class ClickAndCollectExampleDependencyProvider extends AbstractBundleDependencyP
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addServicePointFacade(Container $container): Container
     {
         $container->set(static::FACADE_SERVICE_POINT, function (Container $container) {
@@ -125,11 +105,6 @@ class ClickAndCollectExampleDependencyProvider extends AbstractBundleDependencyP
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addShipmentFacade(Container $container): Container
     {
         $container->set(static::FACADE_SHIPMENT, function (Container $container) {
@@ -139,11 +114,6 @@ class ClickAndCollectExampleDependencyProvider extends AbstractBundleDependencyP
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addStoreFacade(Container $container): Container
     {
         $container->set(static::FACADE_STORE, function (Container $container) {
@@ -153,11 +123,6 @@ class ClickAndCollectExampleDependencyProvider extends AbstractBundleDependencyP
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addAvailabilityFacade(Container $container): Container
     {
         $container->set(static::FACADE_AVAILABILITY, function (Container $container) {
@@ -167,11 +132,6 @@ class ClickAndCollectExampleDependencyProvider extends AbstractBundleDependencyP
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addMerchantUserFacade(Container $container): Container
     {
         $container->set(static::FACADE_MERCHANT_USER, function (Container $container) {
@@ -181,11 +141,6 @@ class ClickAndCollectExampleDependencyProvider extends AbstractBundleDependencyP
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addProductOfferStockQuery(Container $container): Container
     {
         $container->set(static::PROPEL_QUERY_PRODUCT_OFFER_STOCK, $container->factory(function () {
@@ -195,11 +150,6 @@ class ClickAndCollectExampleDependencyProvider extends AbstractBundleDependencyP
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addPriceProductOfferQuery(Container $container): Container
     {
         $container->set(static::PROPEL_QUERY_PRICE_PRODUCT_OFFER, $container->factory(function () {

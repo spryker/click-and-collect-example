@@ -94,11 +94,6 @@ class ClickAndCollectExampleBusinessTester extends Actor
      */
     protected const PRICE_MODE_GROSS = 'GROSS_MODE';
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductConcreteTransfer $productConcreteTransfer
-     *
-     * @return \Generated\Shared\Transfer\ItemTransfer
-     */
     public function createItemTransfer(ProductConcreteTransfer $productConcreteTransfer): ItemTransfer
     {
         return (new ItemTransfer())
@@ -107,11 +102,6 @@ class ClickAndCollectExampleBusinessTester extends Actor
             ->setSku($productConcreteTransfer->getSku());
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\StoreTransfer $storeTransfer
-     *
-     * @return \Generated\Shared\Transfer\QuoteTransfer
-     */
     public function createQuoteTransfer(StoreTransfer $storeTransfer): QuoteTransfer
     {
         return (new QuoteTransfer())
@@ -197,9 +187,6 @@ class ClickAndCollectExampleBusinessTester extends Actor
         return $serviceTransfer;
     }
 
-    /**
-     * @return void
-     */
     public function mockClickAndCollectExampleConfig(): void
     {
         $clickAndCollectExampleConfigMock = Stub::make(

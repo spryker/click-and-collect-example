@@ -20,9 +20,6 @@ class ProductOfferServicePointAvailabilityCalculator implements ProductOfferServ
      */
     protected ProductOfferServicePointAvailabilityResponseItemSorterInterface $productOfferServicePointAvailabilityResponseItemSorter;
 
-    /**
-     * @param \Spryker\Client\ClickAndCollectExample\Sorter\ProductOfferServicePointAvailabilityResponseItemSorterInterface $productOfferServicePointAvailabilityResponseItemSorter
-     */
     public function __construct(ProductOfferServicePointAvailabilityResponseItemSorterInterface $productOfferServicePointAvailabilityResponseItemSorter)
     {
         $this->productOfferServicePointAvailabilityResponseItemSorter = $productOfferServicePointAvailabilityResponseItemSorter;
@@ -187,12 +184,6 @@ class ProductOfferServicePointAvailabilityCalculator implements ProductOfferServ
         return $resolvedProductOfferServicePointAvailabilityResponseItemTransfers;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductOfferServicePointAvailabilityRequestItemTransfer $productOfferServicePointAvailabilityRequestItemTransfer
-     * @param \Generated\Shared\Transfer\ProductOfferServicePointAvailabilityResponseItemTransfer $productOfferServicePointAvailabilityResponseItemTransfer
-     *
-     * @return bool
-     */
     protected function isAvailabilityApplicableByMerchantReference(
         ProductOfferServicePointAvailabilityRequestItemTransfer $productOfferServicePointAvailabilityRequestItemTransfer,
         ProductOfferServicePointAvailabilityResponseItemTransfer $productOfferServicePointAvailabilityResponseItemTransfer
@@ -264,13 +255,6 @@ class ProductOfferServicePointAvailabilityCalculator implements ProductOfferServ
         return $productOfferServicePointAvailabilityResponseItemTransfersGroupedByServicePointUuid;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductOfferServicePointAvailabilityRequestItemTransfer $productOfferServicePointAvailabilityRequestItemTransfer
-     * @param $servicePointUuid
-     * @param int $quantity
-     *
-     * @return \Generated\Shared\Transfer\ProductOfferServicePointAvailabilityResponseItemTransfer
-     */
     protected function createNotAvailableProductOfferServicePointAvailabilityResponseItemTransfer(
         ProductOfferServicePointAvailabilityRequestItemTransfer $productOfferServicePointAvailabilityRequestItemTransfer,
         string $servicePointUuid,

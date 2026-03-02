@@ -25,11 +25,6 @@ class ClickAndCollectExampleToServicePointFacadeBridge implements ClickAndCollec
         $this->servicePointFacade = $servicePointFacade;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ServicePointCriteriaTransfer $servicePointCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\ServicePointCollectionTransfer
-     */
     public function getServicePointCollection(
         ServicePointCriteriaTransfer $servicePointCriteriaTransfer
     ): ServicePointCollectionTransfer {

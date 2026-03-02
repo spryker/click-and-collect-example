@@ -36,13 +36,6 @@ class PriceProductOfferMapper
         return $productOfferPriceTransfers;
     }
 
-    /**
-     * @param \Orm\Zed\PriceProductOffer\Persistence\SpyPriceProductOffer $priceProductOfferEntity
-     * @param \Generated\Shared\Transfer\ProductOfferPriceTransfer $productOfferPriceTransfer
-     * @param string $priceMode
-     *
-     * @return \Generated\Shared\Transfer\ProductOfferPriceTransfer
-     */
     protected function mapPriceByPriceMode(
         SpyPriceProductOffer $priceProductOfferEntity,
         ProductOfferPriceTransfer $productOfferPriceTransfer,

@@ -33,12 +33,6 @@ class QuoteReplacementResponseErrorAdder implements QuoteReplacementResponseErro
      */
     protected const ITEM_NAME_POSTFIX = '...';
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteReplacementResponseTransfer $quoteReplacementResponseTransfer
-     * @param \Generated\Shared\Transfer\ItemTransfer $itemTransfer
-     *
-     * @return \Generated\Shared\Transfer\QuoteReplacementResponseTransfer
-     */
     public function addError(QuoteReplacementResponseTransfer $quoteReplacementResponseTransfer, ItemTransfer $itemTransfer): QuoteReplacementResponseTransfer
     {
         $quoteReplacementResponseTransfer->addError($this->createQuoteErrorTransfer(
@@ -64,11 +58,6 @@ class QuoteReplacementResponseErrorAdder implements QuoteReplacementResponseErro
             ->setParameters($parameters);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ItemTransfer $itemTransfer
-     *
-     * @return string
-     */
     protected function getTruncatedItemTransferName(ItemTransfer $itemTransfer): string
     {
         return substr($itemTransfer->getNameOrFail(), 0, static::ITEM_NAME_TRUNCATED_SYMBOLS) . static::ITEM_NAME_POSTFIX;

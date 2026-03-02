@@ -61,9 +61,6 @@ class ValidateProtectedGlueRequestTest extends Unit
      */
     protected ClickAndCollectExampleBusinessTester $tester;
 
-    /**
-     * @return void
-     */
     public function testShouldSkipValidationForRequestWithoutRequestUser(): void
     {
         // Arrange
@@ -80,9 +77,6 @@ class ValidateProtectedGlueRequestTest extends Unit
         $this->assertTrue($checkoutResponseTransfer->getIsValid());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldSkipValidationForRequestWithoutSurrogateIdentifier(): void
     {
         // Arrange
@@ -99,9 +93,6 @@ class ValidateProtectedGlueRequestTest extends Unit
         $this->assertTrue($checkoutResponseTransfer->getIsValid());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldReturnSuccessValidationForUserWithoutMerchantUserRelation(): void
     {
         // Arrange
@@ -119,9 +110,6 @@ class ValidateProtectedGlueRequestTest extends Unit
         $this->assertTrue($checkoutResponseTransfer->getIsValid());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldReturnFailedValidationForUserWithMerchantUserRelation(): void
     {
         // Arrange
@@ -151,9 +139,6 @@ class ValidateProtectedGlueRequestTest extends Unit
         );
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\MerchantUserTransfer
-     */
     protected function createMerchantUser(): MerchantUserTransfer
     {
         $merchantTransfer = $this->tester->haveMerchant([MerchantTransfer::STATUS => static::MERCHANT_STATUS_APPROVED]);

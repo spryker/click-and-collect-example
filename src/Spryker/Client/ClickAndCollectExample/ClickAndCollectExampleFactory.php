@@ -18,9 +18,6 @@ use Spryker\Client\Kernel\AbstractFactory;
 
 class ClickAndCollectExampleFactory extends AbstractFactory
 {
-    /**
-     * @return \Spryker\Client\ClickAndCollectExample\Calculator\ProductOfferServicePointAvailabilityCalculatorInterface
-     */
     public function createProductOfferServicePointAvailabilityCalculator(): ProductOfferServicePointAvailabilityCalculatorInterface
     {
         return new ProductOfferServicePointAvailabilityCalculator(
@@ -28,17 +25,11 @@ class ClickAndCollectExampleFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \Spryker\Client\ClickAndCollectExample\Sorter\ProductOfferServicePointAvailabilityResponseItemSorterInterface
-     */
     public function createProductOfferServicePointAvailabilityResponseItemSorter(): ProductOfferServicePointAvailabilityResponseItemSorterInterface
     {
         return new ProductOfferServicePointAvailabilityResponseItemSorter();
     }
 
-    /**
-     * @return \Spryker\Client\ClickAndCollectExample\Filter\ShipmentTypeFilterInterface
-     */
     public function createShipmentTypeFilter(): ShipmentTypeFilterInterface
     {
         return new ShipmentTypeFilter(
@@ -46,9 +37,6 @@ class ClickAndCollectExampleFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \Spryker\Client\ClickAndCollectExample\Dependency\Client\ClickAndCollectExampleToProductOfferStorageClientInterface
-     */
     public function getProductOfferStorageClient(): ClickAndCollectExampleToProductOfferStorageClientInterface
     {
         return $this->getProvidedDependency(ClickAndCollectExampleDependencyProvider::CLIENT_PRODUCT_OFFER_STORAGE);

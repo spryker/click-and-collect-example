@@ -41,9 +41,6 @@ class IsApplicableTest extends Unit
      */
     protected ClickAndCollectExampleClientTester $tester;
 
-    /**
-     * @return void
-     */
     public function testReturnsFalseWhenServicePointsAreNotProvided(): void
     {
         // Arrange
@@ -69,9 +66,6 @@ class IsApplicableTest extends Unit
         $this->assertFalse($isApplicable);
     }
 
-    /**
-     * @return void
-     */
     public function testReturnsFalseWhenRequestItemsAreNotProvided(): void
     {
         // Arrange
@@ -88,9 +82,6 @@ class IsApplicableTest extends Unit
         $this->assertFalse($isApplicable);
     }
 
-    /**
-     * @return void
-     */
     public function testReturnsTrueWhenNeededDataIsProvided(): void
     {
         // Arrange

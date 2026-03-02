@@ -24,9 +24,6 @@ class ClickAndCollectExampleFacadeMocks extends Unit
      */
     protected ClickAndCollectExampleBusinessTester $tester;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -51,11 +48,6 @@ class ClickAndCollectExampleFacadeMocks extends Unit
         });
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductOfferTransfer $productOfferTransfer
-     *
-     * @return \Generated\Shared\Transfer\SellableItemsResponseTransfer
-     */
     protected function createSellableItemsResponseTransfer(ProductOfferTransfer $productOfferTransfer): SellableItemsResponseTransfer
     {
         /** @var \Generated\Shared\Transfer\ProductOfferStockTransfer $productOfferStockTransfer */

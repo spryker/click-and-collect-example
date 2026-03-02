@@ -17,9 +17,6 @@ class ProductOfferServicePointExpander implements ProductOfferServicePointExpand
      */
     protected ClickAndCollectExampleRepositoryInterface $clickAndCollectExampleRepository;
 
-    /**
-     * @param \Spryker\Zed\ClickAndCollectExample\Persistence\ClickAndCollectExampleRepositoryInterface $clickAndCollectExampleRepository
-     */
     public function __construct(
         ClickAndCollectExampleRepositoryInterface $clickAndCollectExampleRepository
     ) {

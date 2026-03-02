@@ -48,11 +48,6 @@ class DeliveryItemProductOfferReplacer extends AbstractItemProductOfferReplacer
         return $quoteItemTransfersForReplacement;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ItemTransfer $itemTransfer
-     *
-     * @return bool
-     */
     protected function isQuoteItemApplicable(ItemTransfer $itemTransfer): bool
     {
         return $itemTransfer->getShipmentType()
@@ -61,11 +56,6 @@ class DeliveryItemProductOfferReplacer extends AbstractItemProductOfferReplacer
             && $itemTransfer->getShipmentTypeOrFail()->getKey() === $this->clickAndCollectExampleConfig->getDeliveryShipmentTypeKey();
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ItemTransfer $itemTransfer
-     *
-     * @return bool
-     */
     protected function isItemProductBundle(ItemTransfer $itemTransfer): bool
     {
         return $itemTransfer->getRelatedBundleItemIdentifier() || $itemTransfer->getBundleItemIdentifier();

@@ -45,13 +45,6 @@ abstract class AbstractItemProductOfferReplacer implements ItemProductOfferRepla
      */
     protected ClickAndCollectExampleConfig $clickAndCollectExampleConfig;
 
-    /**
-     * @param \Spryker\Zed\ClickAndCollectExample\Business\Reader\ProductOfferServicePointReaderInterface $productOfferServicePointReader
-     * @param \Spryker\Zed\ClickAndCollectExample\Business\ProductOfferReplacementFinder\ProductOfferReplacementFinderInterface $replacementFinder
-     * @param \Spryker\Zed\ClickAndCollectExample\Business\ErrorAdder\QuoteReplacementResponseErrorAdderInterface $quoteReplacementResponseErrorAdder
-     * @param \Spryker\Zed\ClickAndCollectExample\Business\Merger\ItemMergerInterface $itemMerger
-     * @param \Spryker\Zed\ClickAndCollectExample\ClickAndCollectExampleConfig $clickAndCollectExampleConfig
-     */
     public function __construct(
         ProductOfferServicePointReaderInterface $productOfferServicePointReader,
         ProductOfferReplacementFinderInterface $replacementFinder,
@@ -81,11 +74,6 @@ abstract class AbstractItemProductOfferReplacer implements ItemProductOfferRepla
      */
     abstract protected function getQuoteItemsAvailableForReplacement(QuoteReplacementResponseTransfer $quoteReplacementResponseTransfer): array;
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     *
-     * @return \Generated\Shared\Transfer\QuoteReplacementResponseTransfer
-     */
     public function replaceQuoteItemProductOffers(QuoteTransfer $quoteTransfer): QuoteReplacementResponseTransfer
     {
         $quoteReplacementResponseTransfer = (new QuoteReplacementResponseTransfer())->setQuote($quoteTransfer);
@@ -172,11 +160,6 @@ abstract class AbstractItemProductOfferReplacer implements ItemProductOfferRepla
         return $quoteReplacementResponseTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     *
-     * @return bool
-     */
     protected function isFilteredByIsActive(QuoteTransfer $quoteTransfer): bool
     {
         $quoteProcessFlowName = $quoteTransfer->getQuoteProcessFlow()?->getNameOrFail();

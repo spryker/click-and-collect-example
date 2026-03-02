@@ -28,10 +28,6 @@ class QuoteItemProductOfferReplacementValidator implements QuoteItemProductOffer
      */
     protected ItemExpanderInterface $itemExpander;
 
-    /**
-     * @param \Spryker\Zed\ClickAndCollectExample\Business\Expander\ItemExpanderInterface $itemExpander
-     * @param \Spryker\Zed\ClickAndCollectExample\Business\Replacer\QuoteProductOfferReplacerInterface $quoteProductOfferReplacer
-     */
     public function __construct(
         ItemExpanderInterface $itemExpander,
         QuoteProductOfferReplacerInterface $quoteProductOfferReplacer
@@ -40,11 +36,6 @@ class QuoteItemProductOfferReplacementValidator implements QuoteItemProductOffer
         $this->quoteProductOfferReplacer = $quoteProductOfferReplacer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CheckoutDataTransfer $checkoutDataTransfer
-     *
-     * @return \Generated\Shared\Transfer\CheckoutResponseTransfer
-     */
     public function validate(CheckoutDataTransfer $checkoutDataTransfer): CheckoutResponseTransfer
     {
         $checkoutResponseTransfer = (new CheckoutResponseTransfer())->setIsSuccess(true);
@@ -69,12 +60,6 @@ class QuoteItemProductOfferReplacementValidator implements QuoteItemProductOffer
         return $this->mapQuoteReplacementResponseToCheckoutResponse($quoteReplacementResponseTransfer, $checkoutResponseTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteReplacementResponseTransfer $quoteReplacementResponseTransfer
-     * @param \Generated\Shared\Transfer\CheckoutResponseTransfer $checkoutResponseTransfer
-     *
-     * @return \Generated\Shared\Transfer\CheckoutResponseTransfer
-     */
     protected function mapQuoteReplacementResponseToCheckoutResponse(
         QuoteReplacementResponseTransfer $quoteReplacementResponseTransfer,
         CheckoutResponseTransfer $checkoutResponseTransfer
@@ -93,11 +78,6 @@ class QuoteItemProductOfferReplacementValidator implements QuoteItemProductOffer
         return $checkoutResponseTransfer->setIsSuccess(false);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ItemCollectionTransfer $itemCollectionTransfer
-     *
-     * @return \Generated\Shared\Transfer\ItemCollectionTransfer
-     */
     protected function getValidItems(ItemCollectionTransfer $itemCollectionTransfer): ItemCollectionTransfer
     {
         $validItemCollectionTransfer = new ItemCollectionTransfer();

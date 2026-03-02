@@ -25,11 +25,6 @@ class ClickAndCollectExampleToProductOfferStorageClientBridge implements ClickAn
         $this->productOfferStorageClient = $productOfferStorageClient;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductOfferStorageCriteriaTransfer $productOfferStorageCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\ProductOfferStorageCollectionTransfer
-     */
     public function getProductOfferStoragesBySkus(
         ProductOfferStorageCriteriaTransfer $productOfferStorageCriteriaTransfer
     ): ProductOfferStorageCollectionTransfer {

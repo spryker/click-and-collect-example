@@ -21,11 +21,6 @@ class ClickAndCollectExampleDependencyProvider extends AbstractDependencyProvide
      */
     public const CLIENT_PRODUCT_OFFER_STORAGE = 'CLIENT_PRODUCT_OFFER_STORAGE';
 
-    /**
-     * @param \Spryker\Client\Kernel\Container $container
-     *
-     * @return \Spryker\Client\Kernel\Container
-     */
     public function provideServiceLayerDependencies(Container $container): Container
     {
         $container = parent::provideServiceLayerDependencies($container);
@@ -34,11 +29,6 @@ class ClickAndCollectExampleDependencyProvider extends AbstractDependencyProvide
         return $container;
     }
 
-    /**
-     * @param \Spryker\Client\Kernel\Container $container
-     *
-     * @return \Spryker\Client\Kernel\Container
-     */
     protected function addProductOfferStorageClient(Container $container): Container
     {
         $container->set(static::CLIENT_PRODUCT_OFFER_STORAGE, function (Container $container) {

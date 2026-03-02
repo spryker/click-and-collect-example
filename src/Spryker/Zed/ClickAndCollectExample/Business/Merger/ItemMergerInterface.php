@@ -18,11 +18,5 @@ interface ItemMergerInterface
      */
     public function mergeItemTransfersByCriteria(array $itemTransfers): array;
 
-    /**
-     * @param \Generated\Shared\Transfer\ItemTransfer $originalItemTransfer
-     * @param \Generated\Shared\Transfer\ItemTransfer $mergedItemTransfer
-     *
-     * @return bool
-     */
     public function isSameItemTransfer(ItemTransfer $originalItemTransfer, ItemTransfer $mergedItemTransfer): bool;
 }

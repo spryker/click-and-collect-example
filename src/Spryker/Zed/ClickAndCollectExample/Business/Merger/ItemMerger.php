@@ -36,23 +36,11 @@ class ItemMerger implements ItemMergerInterface
         return $mergedItemTransfers;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ItemTransfer $originalItemTransfer
-     * @param \Generated\Shared\Transfer\ItemTransfer $mergedItemTransfer
-     *
-     * @return bool
-     */
     public function isSameItemTransfer(ItemTransfer $originalItemTransfer, ItemTransfer $mergedItemTransfer): bool
     {
         return $this->generateItemKey($originalItemTransfer) === $this->generateItemKey($mergedItemTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ItemTransfer $baseItemTransfer
-     * @param \Generated\Shared\Transfer\ItemTransfer $mergeableItemTransfer
-     *
-     * @return \Generated\Shared\Transfer\ItemTransfer
-     */
     protected function mergeItemTransfers(ItemTransfer $baseItemTransfer, ItemTransfer $mergeableItemTransfer): ItemTransfer
     {
         $baseItemTransfer->setQuantity(
@@ -62,11 +50,6 @@ class ItemMerger implements ItemMergerInterface
         return $baseItemTransfer->setProductOfferReference(null);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ItemTransfer $itemTransfer
-     *
-     * @return string
-     */
     protected function generateItemKey(ItemTransfer $itemTransfer): string
     {
         $itemKeyParts = [

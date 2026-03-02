@@ -33,9 +33,6 @@ use SprykerTest\Zed\ClickAndCollectExample\ClickAndCollectExampleBusinessTester;
  */
 class ReplaceQuoteItemProductOffersPickupTest extends ClickAndCollectExampleFacadeMocks
 {
-    /**
-     * @return void
-     */
     public function testReplacesWithSuitableProductOffer(): void
     {
         // Arrange
@@ -204,9 +201,6 @@ class ReplaceQuoteItemProductOffersPickupTest extends ClickAndCollectExampleFaca
         $this->assertEmpty($quoteReplacementResponseTransfer->getFailedReplacementItems());
     }
 
-    /**
-     * @return void
-     */
     public function testReplacesWithSuitableProductOfferWhereMerchantReferenceIsNull(): void
     {
         // Arrange
@@ -264,9 +258,6 @@ class ReplaceQuoteItemProductOffersPickupTest extends ClickAndCollectExampleFaca
         $this->assertEmpty($quoteReplacementResponseTransfer->getFailedReplacementItems());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldNotReplaceWithTheSameOffer(): void
     {
         // Arrange
@@ -319,9 +310,6 @@ class ReplaceQuoteItemProductOffersPickupTest extends ClickAndCollectExampleFaca
         $this->assertEmpty($quoteReplacementResponseTransfer->getFailedReplacementItems());
     }
 
-    /**
-     * @return void
-     */
     public function testFailsWithSuitableProductOfferAndNotSuitableServicePoint(): void
     {
         // Arrange
@@ -382,9 +370,6 @@ class ReplaceQuoteItemProductOffersPickupTest extends ClickAndCollectExampleFaca
         $this->assertCount(1, $quoteReplacementResponseTransfer->getFailedReplacementItems());
     }
 
-    /**
-     * @return void
-     */
     public function testFailsToReplaceProductOfferFromAnotherMerchant(): void
     {
         // Arrange
@@ -442,9 +427,6 @@ class ReplaceQuoteItemProductOffersPickupTest extends ClickAndCollectExampleFaca
         $this->assertCount(1, $quoteReplacementResponseTransfer->getFailedReplacementItems());
     }
 
-    /**
-     * @return void
-     */
     public function testFailsWithLowProductOfferAvailability(): void
     {
         // Arrange
@@ -504,9 +486,6 @@ class ReplaceQuoteItemProductOffersPickupTest extends ClickAndCollectExampleFaca
         $this->assertCount(1, $quoteReplacementResponseTransfer->getFailedReplacementItems());
     }
 
-    /**
-     * @return void
-     */
     public function testFailsWithTwoItemsWithSameProductOfferAndLowProductOfferAvailability(): void
     {
         // Arrange
@@ -581,9 +560,6 @@ class ReplaceQuoteItemProductOffersPickupTest extends ClickAndCollectExampleFaca
         $this->assertCount(2, $quoteReplacementResponseTransfer->getFailedReplacementItems());
     }
 
-    /**
-     * @return void
-     */
     public function testFailsWithTwoItemsWithDifferentProductOfferFromSameMerchantAndLowProductOfferAvailability(): void
     {
         // Arrange
@@ -662,9 +638,6 @@ class ReplaceQuoteItemProductOffersPickupTest extends ClickAndCollectExampleFaca
         $this->assertCount(2, $quoteReplacementResponseTransfer->getFailedReplacementItems());
     }
 
-    /**
-     * @return void
-     */
     public function testFailsIfTargetProductOfferIsInactive(): void
     {
         // Arrange
@@ -720,9 +693,6 @@ class ReplaceQuoteItemProductOffersPickupTest extends ClickAndCollectExampleFaca
         $this->assertCount(1, $quoteReplacementResponseTransfer->getFailedReplacementItems());
     }
 
-    /**
-     * @return void
-     */
     public function testFailsWithProductOfferFromAnotherStore(): void
     {
         // Arrange

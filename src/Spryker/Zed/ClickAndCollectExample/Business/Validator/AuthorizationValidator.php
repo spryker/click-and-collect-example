@@ -32,21 +32,12 @@ class AuthorizationValidator implements AuthorizationValidatorInterface
      */
     protected ClickAndCollectExampleToMerchantUserFacadeInterface $merchantUserFacade;
 
-    /**
-     * @param \Spryker\Zed\ClickAndCollectExample\Dependency\Facade\ClickAndCollectExampleToMerchantUserFacadeInterface $merchantUserFacade
-     */
     public function __construct(
         ClickAndCollectExampleToMerchantUserFacadeInterface $merchantUserFacade
     ) {
         $this->merchantUserFacade = $merchantUserFacade;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\GlueRequestTransfer $glueRequestTransfer
-     * @param \Spryker\Glue\GlueApplicationExtension\Dependency\Plugin\ResourceInterface $resource
-     *
-     * @return \Generated\Shared\Transfer\GlueRequestValidationTransfer
-     */
     public function validate(GlueRequestTransfer $glueRequestTransfer, ResourceInterface $resource): GlueRequestValidationTransfer
     {
         if (!$glueRequestTransfer->getRequestUser() || !$glueRequestTransfer->getRequestUserOrFail()->getSurrogateIdentifier()) {

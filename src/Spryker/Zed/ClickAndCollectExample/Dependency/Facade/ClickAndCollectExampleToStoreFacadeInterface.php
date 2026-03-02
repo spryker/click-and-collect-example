@@ -11,10 +11,5 @@ use Generated\Shared\Transfer\StoreTransfer;
 
 interface ClickAndCollectExampleToStoreFacadeInterface
 {
-    /**
-     * @param bool $fallbackToDefault
-     *
-     * @return \Generated\Shared\Transfer\StoreTransfer
-     */
     public function getCurrentStore(bool $fallbackToDefault = false): StoreTransfer;
 }

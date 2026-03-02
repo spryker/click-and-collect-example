@@ -36,11 +36,6 @@ class ProductOfferReplacementFinder implements ProductOfferReplacementFinderInte
      */
     protected ProductOfferReplacementCheckerInterface $productOfferReplacementChecker;
 
-    /**
-     * @param \Spryker\Zed\ClickAndCollectExample\Dependency\Facade\ClickAndCollectExampleToStoreFacadeInterface $storeFacade
-     * @param \Spryker\Zed\ClickAndCollectExample\Dependency\Facade\ClickAndCollectExampleToAvailabilityFacadeInterface $availabilityFacade
-     * @param \Spryker\Zed\ClickAndCollectExample\Business\ProductOfferReplacementChecker\ProductOfferReplacementCheckerInterface $productOfferReplacementChecker
-     */
     public function __construct(
         ClickAndCollectExampleToStoreFacadeInterface $storeFacade,
         ClickAndCollectExampleToAvailabilityFacadeInterface $availabilityFacade,
@@ -115,12 +110,6 @@ class ProductOfferReplacementFinder implements ProductOfferReplacementFinderInte
         return $indexedSellableItemResponseTransfers;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ItemTransfer $itemTransfer
-     * @param \Generated\Shared\Transfer\ProductOfferServicePointTransfer $productOfferServicePointTransfer
-     *
-     * @return bool
-     */
     protected function checkProductOfferServicePointAvailability(
         ItemTransfer $itemTransfer,
         ProductOfferServicePointTransfer $productOfferServicePointTransfer

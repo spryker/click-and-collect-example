@@ -22,49 +22,31 @@ use Spryker\Zed\Kernel\Persistence\AbstractPersistenceFactory;
  */
 class ClickAndCollectExamplePersistenceFactory extends AbstractPersistenceFactory
 {
-    /**
-     * @return \Spryker\Zed\ClickAndCollectExample\Persistence\Propel\Mapper\ProductOfferMapper
-     */
     public function createProductOfferMapper(): ProductOfferMapper
     {
         return new ProductOfferMapper();
     }
 
-    /**
-     * @return \Spryker\Zed\ClickAndCollectExample\Persistence\Propel\Mapper\ProductOfferStockMapper
-     */
     public function createProductOfferStockMapper(): ProductOfferStockMapper
     {
         return new ProductOfferStockMapper();
     }
 
-    /**
-     * @return \Spryker\Zed\ClickAndCollectExample\Persistence\Propel\Mapper\PriceProductOfferMapper
-     */
     public function createPriceProductOfferMapper(): PriceProductOfferMapper
     {
         return new PriceProductOfferMapper();
     }
 
-    /**
-     * @return \Orm\Zed\ProductOffer\Persistence\SpyProductOfferQuery
-     */
     public function getProductOfferQuery(): SpyProductOfferQuery
     {
         return $this->getProvidedDependency(ClickAndCollectExampleDependencyProvider::PROPEL_QUERY_PRODUCT_OFFER);
     }
 
-    /**
-     * @return \Orm\Zed\ProductOfferStock\Persistence\SpyProductOfferStockQuery
-     */
     public function getProductOfferStockQuery(): SpyProductOfferStockQuery
     {
         return $this->getProvidedDependency(ClickAndCollectExampleDependencyProvider::PROPEL_QUERY_PRODUCT_OFFER_STOCK);
     }
 
-    /**
-     * @return \Orm\Zed\PriceProductOffer\Persistence\SpyPriceProductOfferQuery
-     */
     public function getPriceProductOfferQuery(): SpyPriceProductOfferQuery
     {
         return $this->getProvidedDependency(ClickAndCollectExampleDependencyProvider::PROPEL_QUERY_PRICE_PRODUCT_OFFER);

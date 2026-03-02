@@ -37,9 +37,6 @@ use SprykerTest\Zed\ClickAndCollectExample\ClickAndCollectExampleBusinessTester;
  */
 class ValidateReplaceCheckoutDataTest extends ClickAndCollectExampleFacadeMocks
 {
-    /**
-     * @return void
-     */
     public function testValidatesExistingReplacement(): void
     {
         // Arrange
@@ -83,9 +80,6 @@ class ValidateReplaceCheckoutDataTest extends ClickAndCollectExampleFacadeMocks
         $this->assertCount(0, $checkoutResponseTransfer->getErrors());
     }
 
-    /**
-     * @return void
-     */
     public function testValidatesNotExistingReplacement(): void
     {
         // Arrange
@@ -132,11 +126,6 @@ class ValidateReplaceCheckoutDataTest extends ClickAndCollectExampleFacadeMocks
         $this->assertCount(1, $checkoutResponseTransfer->getErrors());
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ShipmentMethodCollectionTransfer $shipmentMethodCollectionTransfer
-     *
-     * @return void
-     */
     protected function mockShipmentFacade(ShipmentMethodCollectionTransfer $shipmentMethodCollectionTransfer): void
     {
         $clickAndCollectExampleToShipmentFacadeMock = $this->getMockBuilder(ClickAndCollectExampleToShipmentFacadeBridge::class)
@@ -147,11 +136,6 @@ class ValidateReplaceCheckoutDataTest extends ClickAndCollectExampleFacadeMocks
         $this->tester->mockFactoryMethod('getShipmentFacade', $clickAndCollectExampleToShipmentFacadeMock);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ServicePointCollectionTransfer $servicePointCollectionTransfer
-     *
-     * @return void
-     */
     protected function mockServicePointFacade(ServicePointCollectionTransfer $servicePointCollectionTransfer): void
     {
         $clickAndCollectExampleToServicePointFacadeMock = $this->getMockBuilder(ClickAndCollectExampleToServicePointFacadeBridge::class)
@@ -162,12 +146,6 @@ class ValidateReplaceCheckoutDataTest extends ClickAndCollectExampleFacadeMocks
         $this->tester->mockFactoryMethod('getServicePointFacade', $clickAndCollectExampleToServicePointFacadeMock);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteReplacementResponseTransfer $quoteReplacementResponseTransfer
-     * @param int $callCount
-     *
-     * @return void
-     */
     protected function mockQuoteProductOfferReplacer(QuoteReplacementResponseTransfer $quoteReplacementResponseTransfer, int $callCount): void
     {
         $quoteProductOfferReplacerMock = $this->getMockBuilder(QuoteProductOfferReplacer::class)

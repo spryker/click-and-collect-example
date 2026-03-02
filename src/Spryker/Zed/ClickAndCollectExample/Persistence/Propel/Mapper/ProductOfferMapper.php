@@ -35,12 +35,6 @@ class ProductOfferMapper
         return $productOfferServicePointTransfers;
     }
 
-    /**
-     * @param \Orm\Zed\ProductOffer\Persistence\SpyProductOffer $productOfferEntity
-     * @param \Generated\Shared\Transfer\ProductOfferServicePointTransfer $productOfferServicePointTransfer
-     *
-     * @return \Generated\Shared\Transfer\ProductOfferServicePointTransfer
-     */
     protected function mapProductOfferEntityToProductOfferServicePointTransfer(
         SpyProductOffer $productOfferEntity,
         ProductOfferServicePointTransfer $productOfferServicePointTransfer

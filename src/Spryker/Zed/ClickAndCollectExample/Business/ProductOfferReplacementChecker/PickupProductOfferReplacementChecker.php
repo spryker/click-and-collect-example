@@ -12,12 +12,6 @@ use Generated\Shared\Transfer\ProductOfferServicePointTransfer;
 
 class PickupProductOfferReplacementChecker implements ProductOfferReplacementCheckerInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\ItemTransfer $itemTransfer
-     * @param \Generated\Shared\Transfer\ProductOfferServicePointTransfer $productOfferServicePointTransfer
-     *
-     * @return bool
-     */
     public function isProductOfferServicePointReplaceable(ItemTransfer $itemTransfer, ProductOfferServicePointTransfer $productOfferServicePointTransfer): bool
     {
         $servicePointIds = [];

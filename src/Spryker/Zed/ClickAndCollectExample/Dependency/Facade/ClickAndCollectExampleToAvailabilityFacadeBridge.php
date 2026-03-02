@@ -25,11 +25,6 @@ class ClickAndCollectExampleToAvailabilityFacadeBridge implements ClickAndCollec
         $this->availabilityFacade = $availabilityFacade;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\SellableItemsRequestTransfer $sellableItemsRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\SellableItemsResponseTransfer
-     */
     public function areProductsSellableForStore(
         SellableItemsRequestTransfer $sellableItemsRequestTransfer
     ): SellableItemsResponseTransfer {

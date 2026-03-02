@@ -25,11 +25,6 @@ class ClickAndCollectExampleToMerchantUserFacadeBridge implements ClickAndCollec
         $this->merchantUserFacade = $merchantUserFacade;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantUserCriteriaTransfer $merchantUserCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantUserTransfer|null
-     */
     public function findMerchantUser(MerchantUserCriteriaTransfer $merchantUserCriteriaTransfer): ?MerchantUserTransfer
     {
         return $this->merchantUserFacade->findMerchantUser($merchantUserCriteriaTransfer);

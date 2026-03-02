@@ -23,10 +23,6 @@ class ProductOfferServicePointReader implements ProductOfferServicePointReaderIn
      */
     protected ProductOfferServicePointExpanderInterface $productOfferServicePointExpander;
 
-    /**
-     * @param \Spryker\Zed\ClickAndCollectExample\Persistence\ClickAndCollectExampleRepositoryInterface $clickAndCollectExampleRepository
-     * @param \Spryker\Zed\ClickAndCollectExample\Business\Expander\ProductOfferServicePointExpanderInterface $servicePointExpander
-     */
     public function __construct(
         ClickAndCollectExampleRepositoryInterface $clickAndCollectExampleRepository,
         ProductOfferServicePointExpanderInterface $servicePointExpander

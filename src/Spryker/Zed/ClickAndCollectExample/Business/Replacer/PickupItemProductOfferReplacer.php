@@ -55,11 +55,6 @@ class PickupItemProductOfferReplacer extends AbstractItemProductOfferReplacer
         return $quoteItemTransfersForReplacement;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ItemTransfer $itemTransfer
-     *
-     * @return bool
-     */
     protected function isQuoteItemApplicable(ItemTransfer $itemTransfer): bool
     {
         return $itemTransfer->getShipmentType()
@@ -67,11 +62,6 @@ class PickupItemProductOfferReplacer extends AbstractItemProductOfferReplacer
             && $itemTransfer->getShipmentTypeOrFail()->getKey() === $this->clickAndCollectExampleConfig->getPickupShipmentTypeKey();
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ItemTransfer $itemTransfer
-     *
-     * @return bool
-     */
     protected function isQuoteItemValid(ItemTransfer $itemTransfer): bool
     {
         return $itemTransfer->getShipmentType() !== null
@@ -79,11 +69,6 @@ class PickupItemProductOfferReplacer extends AbstractItemProductOfferReplacer
             && $itemTransfer->getProductOfferReference() !== null;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ItemTransfer $itemTransfer
-     *
-     * @return bool
-     */
     protected function isItemProductBundle(ItemTransfer $itemTransfer): bool
     {
         return $itemTransfer->getRelatedBundleItemIdentifier() || $itemTransfer->getBundleItemIdentifier();

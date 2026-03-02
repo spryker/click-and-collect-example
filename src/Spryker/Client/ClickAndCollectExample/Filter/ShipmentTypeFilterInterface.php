@@ -12,12 +12,6 @@ use Generated\Shared\Transfer\ShipmentTypeStorageCollectionTransfer;
 
 interface ShipmentTypeFilterInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\ShipmentTypeStorageCollectionTransfer $shipmentTypeStorageCollectionTransfer
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShipmentTypeStorageCollectionTransfer
-     */
     public function filterUnavailableProductOfferShipmentTypes(
         ShipmentTypeStorageCollectionTransfer $shipmentTypeStorageCollectionTransfer,
         QuoteTransfer $quoteTransfer

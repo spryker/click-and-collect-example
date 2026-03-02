@@ -12,11 +12,6 @@ use Generated\Shared\Transfer\ProductOfferStorageCriteriaTransfer;
 
 interface ClickAndCollectExampleToProductOfferStorageClientInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\ProductOfferStorageCriteriaTransfer $productOfferStorageCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\ProductOfferStorageCollectionTransfer
-     */
     public function getProductOfferStoragesBySkus(
         ProductOfferStorageCriteriaTransfer $productOfferStorageCriteriaTransfer
     ): ProductOfferStorageCollectionTransfer;

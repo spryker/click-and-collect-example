@@ -31,10 +31,6 @@ class ItemExpander implements ItemExpanderInterface
      */
     protected ClickAndCollectExampleToShipmentFacadeInterface $shipmentFacade;
 
-    /**
-     * @param \Spryker\Zed\ClickAndCollectExample\Dependency\Facade\ClickAndCollectExampleToServicePointFacadeInterface $servicePointFacade
-     * @param \Spryker\Zed\ClickAndCollectExample\Dependency\Facade\ClickAndCollectExampleToShipmentFacadeInterface $shipmentFacade
-     */
     public function __construct(
         ClickAndCollectExampleToServicePointFacadeInterface $servicePointFacade,
         ClickAndCollectExampleToShipmentFacadeInterface $shipmentFacade
@@ -43,12 +39,6 @@ class ItemExpander implements ItemExpanderInterface
         $this->shipmentFacade = $shipmentFacade;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ItemCollectionTransfer $itemCollectionTransfer
-     * @param \Generated\Shared\Transfer\CheckoutDataTransfer $checkoutDataTransfer
-     *
-     * @return \Generated\Shared\Transfer\ItemCollectionTransfer
-     */
     public function expandItemCollectionWithShipment(
         ItemCollectionTransfer $itemCollectionTransfer,
         CheckoutDataTransfer $checkoutDataTransfer
@@ -83,12 +73,6 @@ class ItemExpander implements ItemExpanderInterface
         return $itemCollectionTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ItemCollectionTransfer $itemCollectionTransfer
-     * @param \Generated\Shared\Transfer\CheckoutDataTransfer $checkoutDataTransfer
-     *
-     * @return \Generated\Shared\Transfer\ItemCollectionTransfer
-     */
     public function expandItemCollectionWithServicePoint(
         ItemCollectionTransfer $itemCollectionTransfer,
         CheckoutDataTransfer $checkoutDataTransfer

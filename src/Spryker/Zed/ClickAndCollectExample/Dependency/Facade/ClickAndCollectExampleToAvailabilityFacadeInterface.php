@@ -12,11 +12,6 @@ use Generated\Shared\Transfer\SellableItemsResponseTransfer;
 
 interface ClickAndCollectExampleToAvailabilityFacadeInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\SellableItemsRequestTransfer $sellableItemsRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\SellableItemsResponseTransfer
-     */
     public function areProductsSellableForStore(
         SellableItemsRequestTransfer $sellableItemsRequestTransfer
     ): SellableItemsResponseTransfer;

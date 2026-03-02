@@ -60,9 +60,6 @@ class FilterUnavailableProductOfferShipmentTypesTest extends Unit
      */
     protected ClickAndCollectExampleClientTester $tester;
 
-    /**
-     * @return void
-     */
     public function testFiltersOutShipmentTypesWithoutProductOfferShipmentTypes(): void
     {
         // Arrange
@@ -81,9 +78,6 @@ class FilterUnavailableProductOfferShipmentTypesTest extends Unit
         $this->assertCount(0, $shipmentTypeStorageCollectionTransfer->getShipmentTypeStorages());
     }
 
-    /**
-     * @return void
-     */
     public function testFiltersOutOnlyPickupShipmentType(): void
     {
         // Arrange
@@ -108,9 +102,6 @@ class FilterUnavailableProductOfferShipmentTypesTest extends Unit
         $this->assertSame(static::FAKE_DELIVERY, $shipmentTypeStorageCollectionTransfer->getShipmentTypeStorages()->offsetGet(0)->getKey());
     }
 
-    /**
-     * @return void
-     */
     public function testFiltersOutNothingWhenOneOfferContainsBothShipmentTypes(): void
     {
         // Arrange
@@ -135,9 +126,6 @@ class FilterUnavailableProductOfferShipmentTypesTest extends Unit
         $this->assertCount(2, $shipmentTypeStorageCollectionTransfer->getShipmentTypeStorages());
     }
 
-    /**
-     * @return void
-     */
     public function testFiltersOutNothingWhenOffersContainsBothShipmentTypes(): void
     {
         // Arrange
@@ -164,9 +152,6 @@ class FilterUnavailableProductOfferShipmentTypesTest extends Unit
         $this->assertCount(2, $shipmentTypeStorageCollectionTransfer->getShipmentTypeStorages());
     }
 
-    /**
-     * @return void
-     */
     public function testFiltersOutShipmentTypesWithoutRelations(): void
     {
         // Arrange
@@ -190,9 +175,6 @@ class FilterUnavailableProductOfferShipmentTypesTest extends Unit
         $this->assertCount(0, $shipmentTypeStorageCollectionTransfer->getShipmentTypeStorages());
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\ShipmentTypeStorageCollectionTransfer
-     */
     protected function createShipmentTypeStorageCollection(): ShipmentTypeStorageCollectionTransfer
     {
         return (new ShipmentTypeStorageCollectionTransfer())
@@ -200,9 +182,6 @@ class FilterUnavailableProductOfferShipmentTypesTest extends Unit
             ->addShipmentTypeStorage((new ShipmentTypeStorageTransfer())->setKey(static::FAKE_PICKUP));
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\QuoteTransfer
-     */
     protected function createQuote(): QuoteTransfer
     {
         return (new QuoteTransfer())
@@ -211,11 +190,6 @@ class FilterUnavailableProductOfferShipmentTypesTest extends Unit
             ->addItem((new ItemTransfer())->setSku(static::FAKE_SKU_3));
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductOfferStorageCollectionTransfer $productOfferStorageCollectionTransfer
-     *
-     * @return \Spryker\Client\ClickAndCollectExample\Dependency\Client\ClickAndCollectExampleToProductOfferStorageClientInterface
-     */
     protected function createProductOfferStorageClientMock(
         ProductOfferStorageCollectionTransfer $productOfferStorageCollectionTransfer
     ): ClickAndCollectExampleToProductOfferStorageClientInterface {

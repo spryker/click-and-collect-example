@@ -68,9 +68,6 @@ class CalculateProductOfferServicePointAvailabilitiesTest extends Unit
      */
     protected ClickAndCollectExampleClientTester $tester;
 
-    /**
-     * @return void
-     */
     public function testReturnsAvailabilitiesWhenNoOfferAvailabilitiesFound(): void
     {
         // Arrange
@@ -127,9 +124,6 @@ class CalculateProductOfferServicePointAvailabilitiesTest extends Unit
         }
     }
 
-    /**
-     * @return void
-     */
     public function testReturnsFalseAvailabilityForOfferWithMerchantWhenNoApplicableMerchantFound(): void
     {
         // Arrange
@@ -186,9 +180,6 @@ class CalculateProductOfferServicePointAvailabilitiesTest extends Unit
         $this->assertSame(ClickAndCollectExampleClientTester::SERVICE_POINT_UUID_1, $productOfferServicePointAvailabilityResponseItemTransfer->getServicePointUuid());
     }
 
-    /**
-     * @return void
-     */
     public function testReturnsFalseAvailabilityForOfferWithMerchantWhenApplicableOfferWithLowQuantityFound(): void
     {
         // Arrange
@@ -237,9 +228,6 @@ class CalculateProductOfferServicePointAvailabilitiesTest extends Unit
         $this->assertSame(ClickAndCollectExampleClientTester::SERVICE_POINT_UUID_1, $productOfferServicePointAvailabilityResponseItemTransfer->getServicePointUuid());
     }
 
-    /**
-     * @return void
-     */
     public function testUsesAvailabilityFromTheOfferWithTheSameMerchant(): void
     {
         // Arrange
@@ -288,9 +276,6 @@ class CalculateProductOfferServicePointAvailabilitiesTest extends Unit
         $this->assertSame(ClickAndCollectExampleClientTester::SERVICE_POINT_UUID_1, $productOfferServicePointAvailabilityResponseItemTransfer->getServicePointUuid());
     }
 
-    /**
-     * @return void
-     */
     public function testUsesAnotherOfferAvailabilityForOffersWithMerchantWhenApplicableOfferWithEnoughQuantityFoundFromTheSameMerchant(): void
     {
         // Arrange
@@ -355,9 +340,6 @@ class CalculateProductOfferServicePointAvailabilitiesTest extends Unit
         $this->assertSame(ClickAndCollectExampleClientTester::SERVICE_POINT_UUID_1, $productOfferServicePointAvailabilityResponseItemTransfer->getServicePointUuid());
     }
 
-    /**
-     * @return void
-     */
     public function testSharesAvailabilityForOffersWithMerchantWhenApplicableOfferWithLowQuantityFoundFromTheSameMerchant(): void
     {
         // Arrange
@@ -422,9 +404,6 @@ class CalculateProductOfferServicePointAvailabilitiesTest extends Unit
         $this->assertSame(ClickAndCollectExampleClientTester::SERVICE_POINT_UUID_1, $productOfferServicePointAvailabilityResponseItemTransfer->getServicePointUuid());
     }
 
-    /**
-     * @return void
-     */
     public function testSharesAvailabilityForOffersWithMerchantWhenApplicableOfferWithNeverOutOfStockFromTheSameMerchant(): void
     {
         // Arrange
@@ -489,9 +468,6 @@ class CalculateProductOfferServicePointAvailabilitiesTest extends Unit
         $this->assertSame(ClickAndCollectExampleClientTester::SERVICE_POINT_UUID_1, $productOfferServicePointAvailabilityResponseItemTransfer->getServicePointUuid());
     }
 
-    /**
-     * @return void
-     */
     public function testReturnsFalseAvailabilityForOfferWithoutMerchantWhenNoApplicableOfferFound(): void
     {
         // Arrange
@@ -547,9 +523,6 @@ class CalculateProductOfferServicePointAvailabilitiesTest extends Unit
         $this->assertSame(ClickAndCollectExampleClientTester::SERVICE_POINT_UUID_1, $productOfferServicePointAvailabilityResponseItemTransfer->getServicePointUuid());
     }
 
-    /**
-     * @return void
-     */
     public function testReturnsFalseAvailabilityForOfferWithoutMerchantWhenApplicableOfferWithLowQuantityFound(): void
     {
         // Arrange
@@ -596,9 +569,6 @@ class CalculateProductOfferServicePointAvailabilitiesTest extends Unit
         $this->assertSame(ClickAndCollectExampleClientTester::SERVICE_POINT_UUID_1, $productOfferServicePointAvailabilityResponseItemTransfer->getServicePointUuid());
     }
 
-    /**
-     * @return void
-     */
     public function testUsesAvailabilityFromAnotherTheOfferWithoutMerchant(): void
     {
         // Arrange
@@ -645,9 +615,6 @@ class CalculateProductOfferServicePointAvailabilitiesTest extends Unit
         $this->assertSame(ClickAndCollectExampleClientTester::SERVICE_POINT_UUID_1, $productOfferServicePointAvailabilityResponseItemTransfer->getServicePointUuid());
     }
 
-    /**
-     * @return void
-     */
     public function testSharesAvailabilityForOffersWithoutMerchantWhenApplicableOfferWithEnoughQuantityWithoutMerchantFound(): void
     {
         // Arrange
@@ -709,9 +676,6 @@ class CalculateProductOfferServicePointAvailabilitiesTest extends Unit
         $this->assertSame(ClickAndCollectExampleClientTester::SERVICE_POINT_UUID_1, $productOfferServicePointAvailabilityResponseItemTransfer->getServicePointUuid());
     }
 
-    /**
-     * @return void
-     */
     public function testSharesAvailabilityForOffersWithoutMerchantWhenApplicableOfferWithLowQuantityWithoutMerchantFound(): void
     {
         // Arrange
@@ -773,9 +737,6 @@ class CalculateProductOfferServicePointAvailabilitiesTest extends Unit
         $this->assertSame(ClickAndCollectExampleClientTester::SERVICE_POINT_UUID_1, $productOfferServicePointAvailabilityResponseItemTransfer->getServicePointUuid());
     }
 
-    /**
-     * @return void
-     */
     public function testUsesAvailabilityFromTheRequestedOfferWhenSeveralOffersAreAvailable(): void
     {
         // Arrange
@@ -840,9 +801,6 @@ class CalculateProductOfferServicePointAvailabilitiesTest extends Unit
         }
     }
 
-    /**
-     * @return void
-     */
     public function testUsesAvailabilityFromTheRequestedOfferWithMerchantWhenSeveralOffersAreAvailable(): void
     {
         // Arrange
@@ -912,9 +870,6 @@ class CalculateProductOfferServicePointAvailabilitiesTest extends Unit
         }
     }
 
-    /**
-     * @return void
-     */
     public function testUsesFirstAvailableOfferWhenProductOfferReferenceIsNotProvided(): void
     {
         // Arrange
@@ -969,9 +924,6 @@ class CalculateProductOfferServicePointAvailabilitiesTest extends Unit
         }
     }
 
-    /**
-     * @return void
-     */
     public function testReturnsAvailabilityResponseWhenProductOfferReferenceIsNotProvidedAndProductIsNotAvailable(): void
     {
         // Arrange
@@ -1009,9 +961,6 @@ class CalculateProductOfferServicePointAvailabilitiesTest extends Unit
         $this->assertSame(ClickAndCollectExampleClientTester::SERVICE_POINT_UUID_1, $productOfferServicePointAvailabilityResponseItemTransfer->getServicePointUuid());
     }
 
-    /**
-     * @return void
-     */
     public function testReturnsAllMatchingOffersWithCorrectAvailabilityStatus(): void
     {
         // Arrange
@@ -1080,9 +1029,6 @@ class CalculateProductOfferServicePointAvailabilitiesTest extends Unit
         }
     }
 
-    /**
-     * @return void
-     */
     public function testReturnsOnlyOffersMatchingMerchantWhenMultipleOffersAvailable(): void
     {
         // Arrange
@@ -1148,9 +1094,6 @@ class CalculateProductOfferServicePointAvailabilitiesTest extends Unit
         }
     }
 
-    /**
-     * @return void
-     */
     public function testEachRequestItemGetsIndependentAvailabilityEvaluation(): void
     {
         // Arrange
@@ -1203,9 +1146,6 @@ class CalculateProductOfferServicePointAvailabilitiesTest extends Unit
         }
     }
 
-    /**
-     * @return void
-     */
     public function testThrowsExceptionWhenQuantityPropertyIsMissingInRequestItem(): void
     {
         // Arrange
@@ -1237,9 +1177,6 @@ class CalculateProductOfferServicePointAvailabilitiesTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testThrowsExceptionWhenIdentifierPropertyIsMissingInRequestItem(): void
     {
         // Arrange
@@ -1271,9 +1208,6 @@ class CalculateProductOfferServicePointAvailabilitiesTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testThrowsExceptionWhenAvailableQuantityPropertyIsMissingInResponseItem(): void
     {
         // Arrange
@@ -1304,9 +1238,6 @@ class CalculateProductOfferServicePointAvailabilitiesTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testThrowsExceptionWhenIsNeverOutOfStockPropertyIsMissingInResponseItem(): void
     {
         // Arrange
@@ -1337,9 +1268,6 @@ class CalculateProductOfferServicePointAvailabilitiesTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testThrowsExceptionWhenProductConcreteSkuPropertyIsMissingInResponseItem(): void
     {
         // Arrange
@@ -1370,9 +1298,6 @@ class CalculateProductOfferServicePointAvailabilitiesTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testThrowsExceptionWhenIdentifierPropertyIsMissingInResponseItem(): void
     {
         // Arrange
