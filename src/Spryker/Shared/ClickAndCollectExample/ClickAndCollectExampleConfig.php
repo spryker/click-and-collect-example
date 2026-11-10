@@ -7,9 +7,9 @@
 
 namespace Spryker\Shared\ClickAndCollectExample;
 
-use Spryker\Shared\Kernel\AbstractBundleConfig;
+use Spryker\Shared\Kernel\AbstractSharedConfig;
 
-class ClickAndCollectExampleConfig extends AbstractBundleConfig
+class ClickAndCollectExampleConfig extends AbstractSharedConfig
 {
     /**
      * @api
